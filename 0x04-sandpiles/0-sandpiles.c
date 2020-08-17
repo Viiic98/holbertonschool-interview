@@ -24,7 +24,7 @@ int verify_sandpile(int grid[3][3])
  * @grid: grid to be printed
  * Return: Nothing, just print
  */
-static void print_grid(int grid[3][3])
+void print_grid(int grid[3][3])
 {
 	int i, j;
 
