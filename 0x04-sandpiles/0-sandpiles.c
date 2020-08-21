@@ -8,9 +8,11 @@
  */
 int verify_sandpile(int grid[3][3])
 {
-	for (int i = 0; i < 3; i++)
+	int i, j;
+
+	for (i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (j = 0; j < 3; j++)
 	{
 			if (grid[i][j] >= 4)
 				return (1);
@@ -47,22 +49,23 @@ static void print_grid(int grid[3][3])
 void sandpiles_convert(int grid[3][3])
 {
 	int a[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+	int i, j;
 
 	while (verify_sandpile(grid))
 	{
 		printf("=\n");
 		print_grid(grid);
-		for (int i = 0; i < 3; i++)
+		for (i = 0; i < 3; i++)
 		{
-			for (int j = 0; j < 3; j++)
+			for (j = 0; j < 3; j++)
 			{
 				if (grid[i][j] < 4)
 					a[i][j] = 1;
 			}
 		}
-		for (int i = 0; i < 3; i++)
+		for (i = 0; i < 3; i++)
 		{
-			for (int j = 0; j < 3; j++)
+			for (j = 0; j < 3; j++)
 			{
 				if (grid[i][j] >= 4 && a[i][j] == 0)
 				{
@@ -90,9 +93,11 @@ void sandpiles_convert(int grid[3][3])
  */
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
-	for (int i = 0; i < 3; i++)
+	int i, j;
+
+	for (i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (j = 0; j < 3; j++)
 			grid1[i][j] += grid2[i][j];
 	}
 	sandpiles_convert(grid1);
