@@ -25,13 +25,8 @@ int is_palindrome(listint_t **head)
 				return (1);
 			else
 				return (0);
-		} else if (h->n == tail->n)
-		{
-			h = h->next;
-			length--;
-		} else
-			return (0);
-		for (i = 1; i < length; i++)
+		}
+		for (i = 0; i < length; i++)
 		{
 			tail = h->next;
 			for (j = i; j < length - 1; j++)
