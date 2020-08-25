@@ -19,7 +19,7 @@ int is_palindrome(listint_t **head)
 			length++;
 			tail = tail->next;
 		}
-		if (length == 1)
+		if (length <= 1)
 		{
 			if (h->n == tail->n)
 				return (1);
@@ -31,7 +31,6 @@ int is_palindrome(listint_t **head)
 			length--;
 		} else
 			return (0);
-
 		for (i = 1; i < length; i++)
 		{
 			tail = h->next;
