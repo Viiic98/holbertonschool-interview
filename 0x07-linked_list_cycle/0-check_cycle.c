@@ -10,7 +10,7 @@ int check_cycle(listint_t *list)
 
 	if (list == NULL)
 		return (0);
-	while (a->next && b->next->next)
+	while (a->next && b->next && b->next->next)
 	{
 		a = a->next;
 		b = b->next->next;
