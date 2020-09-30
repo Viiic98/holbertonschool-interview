@@ -6,11 +6,11 @@
  * @direction: 1 if it's left, 2 if it's right
  * Return: 1 upon success, or 0 upon failure
  */
-void left(int *line, size_t size, int direction)
+void left(int *line, size_t size)
 {
 	int i = 1, x = 0;
 
-	while (x < size)
+	while (x < (int)size)
 	{
 		if (line[x] == line[i] && line[i] != 0 && (x != i))
 		{
@@ -22,7 +22,7 @@ void left(int *line, size_t size, int direction)
 			line[x] = line[i];
 			line[i] = 0;
 		}
-		if (i + 1 < size)
+		if (i + 1 < (int)size)
 			i++;
 		else
 			x++;
@@ -35,7 +35,7 @@ void left(int *line, size_t size, int direction)
  * @direction: 1 if it's left, 2 if it's right
  * Return: 1 upon success, or 0 upon failure
  */
-void right(int *line, size_t size, int direction)
+void right(int *line, size_t size)
 {
 	int x = size - 1, i = x - 1;
 
@@ -67,9 +67,9 @@ void right(int *line, size_t size, int direction)
 int slide_line(int *line, size_t size, int direction)
 {
 	if (direction == 1)
-		left(line, size, direction);
+		left(line, size);
 	else if (direction == 2)
-		right(line, size, direction);
+		right(line, size);
 	else
 		return (0);
 	return (1);
