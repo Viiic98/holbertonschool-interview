@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 void menger(int level);
 void print_sponge(int size, char *sponge[size]);
