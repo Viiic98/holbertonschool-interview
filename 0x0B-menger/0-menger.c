@@ -73,6 +73,8 @@ void menger(int level)
 	int size = pow(3, level), i = 0, j = 0, current_level = 1, x = 0, y = 0;
 	char **sponge = NULL, **copy = NULL;
 
+	if (level < 0)
+		return;
 	if (size == 1)
 	{
 		printf("#\n");
@@ -90,24 +92,21 @@ void menger(int level)
 			return;
 	}
 	sponge[0][0] = '#', copy[0][0] = '#';
-	while (current_level <= level)
+	for (current_level = 1; current_level <= level; current_level++)
 	{
 		x = 0;
-		for (i = 0; (i < size) && (x + 3 <= size); i++)
+		for (i = 0; (i < size) && (x + 3 <= size); i++, x += 3)
 		{
 			y = 0;
-			for (j = 0; (j < size) && (y + 3 <= size); j++)
+			for (j = 0; (j < size) && (y + 3 <= size); j++, y += 3)
 			{
 				if (copy[i][j] != ' ')
 					add_one(size, sponge, x, y, '#');
 				else
 					add_one(size, sponge, x, y, ' ');
-				y += 3;
 			}
-			x += 3;
 		}
 		update_copy(size, sponge, copy);
-		current_level++;
 	}
 	print_sponge(size, sponge);
 }
