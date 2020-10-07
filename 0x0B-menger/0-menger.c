@@ -26,7 +26,7 @@ int _pow(int n)
  */
 void print_sponge(int size, char *sponge[size])
 {
-	int i, j;
+	int i = 0, j = 0;
 
 	if (size == 1)
 	{
@@ -50,7 +50,7 @@ void print_sponge(int size, char *sponge[size])
  */
 void add_one(int size, char *sponge[size], int x, int y, char val)
 {
-	int i = x, j;
+	int i = x, j = 0;
 
 	while (i < x + 3)
 	{
@@ -73,7 +73,7 @@ void add_one(int size, char *sponge[size], int x, int y, char val)
  */
 void update_copy(int size, char *org[size], char *copy[size])
 {
-	int i, j;
+	int i = 0, j = 0;
 
 	for (i = 0; i < size / 3; i++)
 	{
@@ -88,8 +88,8 @@ void update_copy(int size, char *org[size], char *copy[size])
  */
 void menger(int level)
 {
-	int size = _pow(level), i, j, current_level = 1, x = 0, y = 0;
-	char **sponge, **copy;
+	int size = _pow(level), i = 0, j = 0, current_level = 1, x = 0, y = 0;
+	char **sponge = NULL, **copy = NULL;
 
 	if (size == 1)
 	{
