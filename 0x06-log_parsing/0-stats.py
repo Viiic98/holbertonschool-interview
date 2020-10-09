@@ -23,7 +23,8 @@ if __name__ == "__main__":
         for line in sys.stdin:
             try:
                 status_code = line.split()[-2]
-                status_list[status_code] += 1
+                if status_code in status_list:
+                    status_list[status_code] += 1
                 file_size += int(line.split()[-1])
                 if i % 10 == 0:
                     print("File size: {}".format(file_size))
