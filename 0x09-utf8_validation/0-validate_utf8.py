@@ -14,6 +14,8 @@ def validUTF8(data):
             while x & m:
                 n_bytes += 1
                 m = m >> 1
+            if n_bytes > 4:
+                return False
             if n_bytes:
                 n_bytes -= 1
         else:
