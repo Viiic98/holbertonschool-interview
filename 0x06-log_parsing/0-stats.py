@@ -22,9 +22,9 @@ if __name__ == "__main__":
     try:
         for line in sys.stdin:
             try:
-                status_code = line.split()[7]
+                status_code = line.split()[-2]
                 status_list[status_code] += 1
-                file_size += int(line.split()[8])
+                file_size += int(line.split()[-1])
                 if i % 10 == 0:
                     print("File size: {}".format(file_size))
                     for k, v in sorted(status_list.items()):
