@@ -19,7 +19,7 @@ def validUTF8(data):
             if n_bytes:
                 n_bytes -= 1
         else:
-            if x & m:
+            if x & m and not x & m >> 1:
                 n_bytes -= 1
             elif x & m >> 1:
                 return False
