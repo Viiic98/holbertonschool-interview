@@ -8,7 +8,7 @@ from signal import signal, SIGINT
 import sys
 
 if __name__ == "__main__":
-    i = 1
+    i = 0
     file_size = 0
     status_list = {"200": 0,
                    "301": 0,
@@ -24,7 +24,6 @@ if __name__ == "__main__":
             status_code = line.split()[7]
             status_list[status_code] += 1
             file_size += int(line.split()[8])
-
             if i % 10 == 0:
                 print("File size: {}".format(file_size))
                 for k, v in sorted(status_list.items()):
@@ -37,3 +36,7 @@ if __name__ == "__main__":
             if v:
                 print(k, ": ", v)
         raise
+    print("File size: ", file_size)
+    for k, v in sorted(status_list.items()):
+        if v:
+            print(k, ": ", v)
