@@ -31,12 +31,12 @@ if __name__ == "__main__":
                         print("{}: {}".format(k, v))
             i += 1
     except KeyboardInterrupt:
-        print("File size: ", file_size)
+        print("File size: {}".format(file_size))
         for k, v in sorted(status_list.items()):
             if v:
-                print(k, ": ", v)
+                print("{}: {}".format(k, v))
         raise
-    print("File size: ", file_size)
+    print("File size: {}".format(file_size))
     for k, v in sorted(status_list.items()):
         if v:
-            print(k, ": ", v)
+            print("{}: {}".format(k, v))
