@@ -21,15 +21,18 @@ if __name__ == "__main__":
 
     try:
         for line in sys.stdin:
-            status_code = line.split()[7]
-            status_list[status_code] += 1
-            file_size += int(line.split()[8])
-            if i % 10 == 0:
-                print("File size: {}".format(file_size))
-                for k, v in sorted(status_list.items()):
-                    if v:
-                        print("{}: {}".format(k, v))
-            i += 1
+            try:
+                status_code = line.split()[7]
+                status_list[status_code] += 1
+                file_size += int(line.split()[8])
+                if i % 10 == 0:
+                    print("File size: {}".format(file_size))
+                    for k, v in sorted(status_list.items()):
+                        if v:
+                            print("{}: {}".format(k, v))
+                i += 1
+            except:
+                pass
     except KeyboardInterrupt:
         print("File size: {}".format(file_size))
         for k, v in sorted(status_list.items()):
