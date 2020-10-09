@@ -8,7 +8,7 @@ from signal import signal, SIGINT
 import sys
 
 if __name__ == "__main__":
-    i = 0
+    i = 1
     file_size = 0
     status_list = {"200": 0,
                    "301": 0,
