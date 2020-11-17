@@ -11,17 +11,22 @@ request(URL, function (error, response, body) {
   if (response.statusCode === 200) {
     const obj = JSON.parse(body);
     const characters = obj.characters;
-    for (const char of characters) {
-      request(char, function (error, response, body) {
-        if (error) {
-          console.error(error);
-        }
-        // Parse string body response to an object
-        if (response.statusCode === 200) {
-          const obj = JSON.parse(body);
-          console.log(obj.name);
-        }
-      });
-    }
+    charsInFilm(characters, 0);
   }
 });
+
+function charsInFilm (characters, index) {
+  if (index < characters.length) {
+    request(characters[index], function (error, response, body) {
+      if (error) {
+        console.error(error);
+      }
+      // Parse string body response to an object
+      if (response.statusCode === 200) {
+        const char = JSON.parse(body);
+        console.log(char.name);
+        charsInFilm(characters, index + 1);
+      }
+    });
+  }
+}
