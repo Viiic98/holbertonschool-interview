@@ -44,7 +44,7 @@ def print_words(words, i):
     """ Print words """
     if i < len(words):
         print("{}: {}".format(words[i][0], words[i][1]))
-    print_words(words, i + 1)
+        print_words(words, i + 1)
 
 
 def count_words(subreddit, word_list):
