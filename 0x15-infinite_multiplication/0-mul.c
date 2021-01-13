@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 int _putchar(char c);
 /**
@@ -96,6 +97,8 @@ int main(int argc, char *argv[])
 			if (ans[i] > 0)
 				break;
 		}
+		if (i == -1)
+			_putchar(ans[0] + 48);
 		for (; i >= 0; i--)
 			_putchar(ans[i] + 48);
 		_putchar('\n');
