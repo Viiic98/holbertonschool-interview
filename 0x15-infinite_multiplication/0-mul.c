@@ -54,8 +54,8 @@ void err(void)
  */
 int main(int argc, char *argv[])
 {
-	int a[2500], b[2500];
-	int ans[5000] = {0};
+	int a[10000], b[10000];
+	int ans[10000] = {0};
 	int i, j, tmp;
 	char *s1, *s2;
 	int l1;
