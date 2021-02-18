@@ -12,7 +12,7 @@ void merge(int *array, int l, int m, int r)
 	int i, j, k;
 	int n1 = m - l + 1;
 	int n2 = r - m;
-	int L[n1], R[n2];
+	int L[10000], R[10000];
 
 	for (i = 0; i < n1; i++)
 		L[i] = array[l + i];
@@ -50,8 +50,8 @@ void merge(int *array, int l, int m, int r)
 	}
 }
 /**
- * sort - create sub arrays
- * @array: Array to be sorted
+ * sort - merge sort algorithm
+ * @array: array to be sorted
  * @l: left
  * @r: right
  * Return: Anything
@@ -70,7 +70,7 @@ void sort(int *array, int l, int r)
 /**
  * merge_sort - merge sort algorithm
  * @array: array to be sorted
- * @size: size of the array
+ * @size: size of array
  * Return: Anything
  */
 void merge_sort(int *array, size_t size)
