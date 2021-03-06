@@ -23,7 +23,6 @@ List *add_node_end(List **list, char *str)
 	}
 	else
 	{
-		printf("NOO");
 		if (head->prev == NULL)
 		{
 			head->next = new_node;
