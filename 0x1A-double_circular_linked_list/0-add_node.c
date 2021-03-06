@@ -14,13 +14,16 @@ List *add_node_end(List **list, char *str)
 	new_node = malloc(sizeof(List));
 	if (new_node == NULL)
 		return (NULL);
-	new_node->str = str;
+	new_node->str = strdup(str);
 	new_node->next = NULL;
 	new_node->prev = NULL;
-	if (head == NULL)
+	if (*list == NULL)
+	{
 		*list = new_node;
+	}
 	else
 	{
+		printf("NOO");
 		if (head->prev == NULL)
 		{
 			head->next = new_node;
@@ -52,11 +55,14 @@ List *add_node_begin(List **list, char *str)
 	new_node = malloc(sizeof(List));
 	if (new_node == NULL)
 		return (NULL);
-	new_node->str = str;
+	new_node->str = strdup(str);
 	new_node->next = NULL;
 	new_node->prev = NULL;
-	if (head == NULL)
+	if (*list == NULL)
+	{
 		*list = new_node;
+		return (*list);
+	}
 	else
 	{
 		if (head->next == NULL)
