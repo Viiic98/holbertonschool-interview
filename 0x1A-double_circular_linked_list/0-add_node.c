@@ -41,7 +41,6 @@ List *add_node_end(List **list, char *str)
 			head->prev = new_node;
 		}
 	}
-	printf("Mine %s\n", new_node->str);
 	return (new_node);
 }
 /**
