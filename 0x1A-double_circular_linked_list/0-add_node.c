@@ -15,6 +15,8 @@ List *add_node_end(List **list, char *str)
 	if (new_node == NULL)
 		return (NULL);
 	new_node->str = strdup(str);
+	if (new_node->str == NULL)
+		return (NULL);
 	new_node->next = NULL;
 	new_node->prev = NULL;
 	if (*list == NULL)
@@ -39,6 +41,7 @@ List *add_node_end(List **list, char *str)
 			head->prev = new_node;
 		}
 	}
+	printf("Mine %s\n", new_node->str);
 	return (new_node);
 }
 /**
@@ -57,6 +60,8 @@ List *add_node_begin(List **list, char *str)
 	if (new_node == NULL)
 		return (NULL);
 	new_node->str = strdup(str);
+	if (new_node->str == NULL)
+		return (NULL);
 	new_node->next = NULL;
 	new_node->prev = NULL;
 	if (*list == NULL)
